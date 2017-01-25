@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_8tVOLSp0FAwVWOEpVTxBH");
+   })();
+</script>
+<script>
+  emailjs.send("gmail","test123",{
+name: 'John',
+reply_email: 'john@doe.com',
+message: 'This is awesome!'
+}).then(function(response) {
+   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+}, function(err) {
+   console.log("FAILED. error=", err);
+});
+</script>
+
+</body>
+</html>
